@@ -8,18 +8,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int arrLen = scanner.nextInt();
         int[] array = new int[arrLen];
-        int minInd = 0;
-        int maxInd = 0;
         for (int i = 0; i < array.length; i++)
             array[i] = scanner.nextInt();
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < array[minInd])
-                minInd = i;
-            if (array[i] > array[maxInd])
-                maxInd = i;
-        }
-        System.out.println("Input array: " + Arrays.toString(array));
-        System.out.printf("Minimum is located at index: %d, and equals: %d%n", minInd, array[minInd]);
-        System.out.printf("Maximum is located at index: %d, and equals: %d%n", maxInd, array[maxInd]);
+        Arrays.sort(array);
+        System.out.println("Sorted input array: " + Arrays.toString(array));
+        System.out.printf("Minimum is located at index: %d, and equals: %d%n", 0, array[0]);
+        System.out.printf("Maximum is located at index: %d, and equals: %d%n", array.length - 1, array[array.length - 1]);
     }
 }
